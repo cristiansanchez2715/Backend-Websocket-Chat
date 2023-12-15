@@ -3,19 +3,19 @@ const express = require("express")
 const app = express()
 const http = require('http')
 const server = http.createServer(app);
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://localhost:3000');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
-  res.header('Access-Control-Allow-Credentials', 'true');
-  next();
-});
+// app.use((req, res, next) => {
+//   res.header('Access-Control-Allow-Origin', 'https://localhost:3000');
+//   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+//   res.header('Access-Control-Allow-Headers', 'Content-Type');
+//   res.header('Access-Control-Allow-Credentials', 'true');
+//   next();
+// });
 
 
 const io = require('socket.io')(server, {
   path: '/socket',
   cors: {
-    origin: 'http://localhost:3000',
+    origin: 'https://diningexperiencesource.shop/',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
     optionsSuccessStatus: 204,
@@ -25,7 +25,7 @@ const io = require('socket.io')(server, {
 const cors = require('cors')
 const corsOptions = {
   // origin: 'https://diningexperiencesource.shop', // Reemplaza con la URL de tu aplicación frontend
-    origin: '*',
+    origin: 'https://diningexperiencesource.shop/',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
   optionsSuccessStatus: 204,
