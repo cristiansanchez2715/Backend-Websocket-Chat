@@ -79,20 +79,20 @@ app.use((err, req, res, next) => {
 // trayendo mensajes de la base de dato
 
 
-app.get("/", (req, res) => {
-  // Consultar mensajes desde la base de datos
-  db.query('SELECT * FROM Messages', (error, results) => {
-      if (error) {
-          console.error('Error al obtener mensajes desde la base de datos:', error);
-          res.status(500).json({ error: 'Error interno del servidor' });
-      } else {
-          // Enviar los mensajes al frontend
-          res.status(200).json(results);
-          // io.emit('mensajeDesdeServidor', mensajes);
-          // io.emit('mensajeDesdeServidor', mensajes);
-      }
-  });
-});
+// app.get("/", (req, res) => {
+//   // Consultar mensajes desde la base de datos
+//   db.query('SELECT * FROM Messages', (error, results) => {
+//       if (error) {
+//           console.error('Error al obtener mensajes desde la base de datos:', error);
+//           res.status(500).json({ error: 'Error interno del servidor' });
+//       } else {
+//           // Enviar los mensajes al frontend
+//           res.status(200).json(results);
+//           // io.emit('mensajeDesdeServidor', mensajes);
+//           // io.emit('mensajeDesdeServidor', mensajes);
+//       }
+//   });
+// });
 
 
 
