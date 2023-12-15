@@ -3,14 +3,12 @@ const express = require("express")
 const app = express()
 const http = require('http')
 const server = http.createServer(app);
-// app.use((req, res, next) => {
-//   res.header('Access-Control-Allow-Origin', 'https://localhost:3000');
-//   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-//   res.header('Access-Control-Allow-Headers', 'Content-Type');
-//   res.header('Access-Control-Allow-Credentials', 'true');
-//   next();
-// });
-
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://diningexperiencesource.shop');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
 
 const io = require('socket.io')(server, {
   path: '/socket',
