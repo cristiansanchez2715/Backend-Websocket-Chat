@@ -13,7 +13,7 @@ app.use((req, res, next) => {
 const io = require('socket.io')(server, {
   path: '/socket',
   cors: {
-    origin: 'https://diningexperiencesource.shop/',
+    origin: 'https://diningexperiencesource.shop',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
     optionsSuccessStatus: 204,
@@ -23,7 +23,7 @@ const io = require('socket.io')(server, {
 const cors = require('cors')
 const corsOptions = {
   // origin: 'https://diningexperiencesource.shop', // Reemplaza con la URL de tu aplicación frontend
-    origin: 'https://diningexperiencesource.shop/',
+    origin: 'https://diningexperiencesource.shop',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
   optionsSuccessStatus: 204,
